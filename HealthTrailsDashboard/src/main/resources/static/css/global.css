@@ -1,0 +1,58 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.cbutton {
+    text-decoration: none;
+    padding: 10px 16px;
+    background-color: #5c3da3;
+    color: white;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.cbutton:hover {
+    transform: scale(1.07);
+    background-color: #462a8a;
+}
+
+header {
+    height: 75px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+header .home {
+    font-size: 25px;
+    margin: 0; /* Remove default margin */
+    position: absolute; /* Positioning the h1 on the left */
+    left: 20px; /* Align it to the left */
+    flex-grow: 1;
+    padding: 10px;
+}
+
+header .home:hover {
+    transform: scale(1.03);
+}
+
+header div {
+    padding: 10px 20px;
+    background-color: #a3b5d8;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center; /* Center the buttons within the div */
+    align-items: center;
+}
+
+header div a {
+    margin: 0 20px; /* Add margin for spacing between buttons (50px total) */
+}
