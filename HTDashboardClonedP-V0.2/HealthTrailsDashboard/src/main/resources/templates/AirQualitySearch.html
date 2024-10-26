@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/global.css">
+    <title>Air Quality Checker</title>
+</head>
+<body>
+<h1>Check Air Quality</h1>
+<form action="/air-data/air-quality" method="GET">
+    <label for="lat">Latitude:</label>
+    <input type="text" id="lat" name="lat" required>
+    <br><br>
+    <label for="lon">Longitude:</label>
+    <input type="text" id="lon" name="lon" required>
+    <br><br>
+    <input class="cbutton" type="submit" value="Check Air Quality">
+</form>
+
+<a class="cbutton" href="home">Home</a>
+
+</body>
+</html>

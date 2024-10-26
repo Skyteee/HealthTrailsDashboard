@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Quality Data</title>
+</head>
+<body>
+<h1>Air Quality Data</h1>
+
+<h2>Coordinates:</h2>
+<p>Latitude: <span th:text="${lat}"></span></p>
+<p>Longitude: <span th:text="${lon}"></span></p>
+
+<h2>Air Quality Index (AQI):</h2>
+<p th:text="${aqi}"></p>
+
+<h2>Components:</h2>
+<ul>
+    <li>CO: <span th:text="${co}"></span></li>
+    <li>NO: <span th:text="${no}"></span></li>
+    <li>NO2: <span th:text="${no2}"></span></li>
+    <li>O3: <span th:text="${o3}"></span></li>
+    <li>SO2: <span th:text="${so2}"></span></li>
+    <li>PM2.5: <span th:text="${pm25}"></span></li>
+    <li>PM10: <span th:text="${pm10}"></span></li>
+    <li>NH3: <span th:text="${nh3}"></span></li>
+</ul>
+
+<a href="/">Go Back</a>
+</body>
+</html>
