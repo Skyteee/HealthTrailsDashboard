@@ -19,4 +19,9 @@ public class BaseURLController {
         return "AirQualitySearch";
     }
 
+    @GetMapping("/data-sources")
+    public String dataSources() {
+        return "Data-Sources";
+    }
+
 }

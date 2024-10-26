@@ -15,7 +15,7 @@
         <a class="cbutton" href="home">Weather Data</a>
         <a class="cbutton" href="home">Path Data</a>
         <a class="cbutton" href="home">Flora & Fauna</a>
-        <a class="cbutton" href="home">XXX</a>
+        <a class="cbutton" href="data-sources">Data Sources</a>
     </div>
 </header>
 
@@ -26,10 +26,19 @@
     <div class="innerlayer">
         <div class="div2">
             <div class="div2left">
-                <h2>Air Quality Data</h2>
-                <p><strong>Coordinates:</strong></p>
-                <p>Latitude: <span id="latitude">Loading...</span></p>
-                <p>Longitude: <span id="longitude">Loading...</span></p>
+                <h2>Air Quality Data for</h2>
+                <div class="card-container">
+                    <div class="card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Latitude</h3>
+                        <p id="latitude">34.123456</p>
+                    </div>
+                    <div class="card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Longitude</h3>
+                        <p id="longitude">-118.123456</p>
+                    </div>
+                </div>
             </div>
             <div class="div2right">
                 <div id="aqiContainer" class="aqi-box">

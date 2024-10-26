@@ -25,13 +25,14 @@
     display: block;
     background-color: #ffffff;
     box-sizing: border-box;
-    color: white;
+    color: #000000;
 }
 
 .outlayer .innerlayer .div2 {
     display: flex;
     row-span: 2;
-    background-color: #a3b5d8;
+    box-sizing: border-box;
+    background-color: #f0f2f5;
     margin: 10px 10px 10px 5px;
     height: calc(50% - 30px);
     width: calc(100% - 20px);
@@ -39,15 +40,20 @@
 }
 
 .div2 .div2left {
+    text-align: center;
     display: inline-block;
     box-sizing: border-box;
     padding: 10px;
     margin: 16px 8px 16px 16px;
     width: 50%;
-    background-color: #5c3da3;
+    background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+}
+
+.div2 .div2left .card {
+
 }
 
 .div2 .div2left:hover {
@@ -60,31 +66,52 @@
     padding: 10px;
     margin: 16px 16px 16px 8px;
     width: 50%;
-    background-color: #5c3da3;
+    background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
 }
 
-.div2 .div2right p {
-    font-size: 20px;
+#aqiContainer {
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#aqiText {
+    font-size: 1.5vw;
+    display: block;
+    color: #000000;
+}
+
+#aqiContainer.good #aqiText,
+#aqiContainer.fair #aqiText,
+#aqiContainer.moderate #aqiText,
+#aqiContainer.poor #aqiText,
+#aqiContainer.veryPoor #aqiText {
+    color: white;
 }
 
 .div2 .div2right .data-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columns */
-    gap: 10px; /* Space between items */
-    margin-top: 10px; /* Space above the grid */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1vh;
+    margin-top: 1vh;
 }
 
 .div2 .div2right .data-item {
-    background-color: rgb(47, 61, 92); /* Light background for items */
+    font-size: 1vw;
+    background-color: rgb(255, 255, 255); /* Light background for items */
     border-radius: 8px; /* Rounded corners */
     padding: 10px; /* Space inside each item */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
     display: flex; /* Flex for alignment */
     justify-content: space-between; /* Space between name and value */
     align-items: center; /* Center items vertically */
+    transition: background-color 0.3s ease;
 }
 
 /* CSS for data item colors based on new classes */
@@ -99,7 +126,7 @@
 }
 
 .div2 .div2right .moderate {
-    background-color: #fff74d; /* Moderate */
+    background-color: #ffca54; /* Moderate */
     color: #ffffff;
 }
 
@@ -113,28 +140,12 @@
     color: white;
 }
 
-#aqiContainer {
-    padding: 10px; /* Add padding */
-    margin-top: 5px; /* Add margin above */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
-    text-align: center; /* Center align text */
-    font-size: 24px; /* Increase font size */
-    font-weight: bold; /* Make text bold */
-    transition: background-color 0.3s ease; /* Smooth transition */
-}
-
-#aqiText {
-    display: block; /* Make it a block element */
-    color: white; /* White text for contrast */
-}
-
 .div2 .div2right:hover {
     transform: scale(1.01);
 }
 
 .outlayer .innerlayer .div3 {
-    background-color: #0a546a;
+    background-color: #f0f2f5;
     margin: 10px 10px 10px 5px;
     height: 50%;
     width: calc(100% - 20px);

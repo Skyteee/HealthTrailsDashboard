@@ -88,7 +88,9 @@ function initMap() {
                 const updateDataItem = (key, value) => {
                     const element = document.getElementById(key);
                     element.textContent = value.toFixed(2); // Display the value
-                    element.parentElement.classList.remove('good', 'decent', 'okay', 'bad', 'terrible'); // Remove old classes
+
+                    // Remove old classes for all metrics
+                    element.parentElement.classList.remove('good', 'fair', 'moderate', 'poor', 'veryPoor');
 
                     if (key === 'aqi') {
                         const aqiContainer = document.getElementById('aqiContainer');
@@ -108,6 +110,8 @@ function initMap() {
                             aqiContainer.classList.add('veryPoor');
                         }
                     }
+
+                    // For other pollutants
                     if (key === 'so2') {
                         if (value < 20) {
                             element.parentElement.classList.add('good');
@@ -207,10 +211,11 @@ function initMap() {
                     }
                 };
 
-                // Update each air quality data item
+// Update each air quality data item
                 for (const [key, value] of Object.entries(airQualityValues)) {
                     updateDataItem(key, value);
                 }
+
             })
             .catch(error => console.error('Error fetching air quality data:', error));
     });

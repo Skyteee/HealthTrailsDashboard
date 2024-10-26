@@ -1,0 +1,48 @@
+/* Main container styling */
+.data-sources-container {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 80px); /* Full height minus header */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Each section div styling */
+.section {
+    flex: 1;
+    overflow-y: auto;
+    margin: 0 10px;
+    padding: 20px;
+    background-color: #f0f2f5;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Card styling */
+.card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    margin-top: 0;
+    color: #333;
+    font-size: 1.25em;
+}
+
+.card p {
+    margin: 8px 0;
+    color: #555;
+}
+
+.example-call {
+    font-family: monospace;
+    background-color: #f5f5f5;
+    padding: 8px;
+    border-radius: 4px;
+    overflow-x: auto;
+}
