@@ -20,6 +20,20 @@
     border-radius: 10px;
 }
 
+#infoBox {
+    position: absolute; /* Position it absolutely within div1 */
+    bottom: 10vh; /* Adjust distance from the bottom */
+    left: 3vh; /* Adjust distance from the left */
+    background-color: rgba(255, 255, 255, 0.8); /* Optional: Semi-transparent background */
+    padding: 10px; /* Optional: Padding for better spacing */
+    border-radius: 5px; /* Optional: Rounded corners */
+    z-index: 500; /* Ensure it appears on top of the map */
+}
+
+#infoBox p {
+    margin: 0; /* Reset default margin for paragraphs */
+}
+
 .innerlayer {
     width: 100%;
     display: block;
@@ -53,7 +67,7 @@
 }
 
 .div2 .div2left .card {
-    
+
 }
 
 .div2 .div2left:hover {

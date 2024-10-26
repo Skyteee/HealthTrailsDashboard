@@ -88,7 +88,9 @@ function initMap() {
                 const updateDataItem = (key, value) => {
                     const element = document.getElementById(key);
                     element.textContent = value.toFixed(2); // Display the value
-                    element.parentElement.classList.remove('good', 'decent', 'okay', 'bad', 'terrible'); // Remove old classes
+
+                    // Remove old classes for all metrics
+                    element.parentElement.classList.remove('good', 'fair', 'moderate', 'poor', 'veryPoor');
 
                     if (key === 'aqi') {
                         const aqiContainer = document.getElementById('aqiContainer');
@@ -108,6 +110,8 @@ function initMap() {
                             aqiContainer.classList.add('veryPoor');
                         }
                     }
+
+                    // For other pollutants
                     if (key === 'so2') {
                         if (value < 20) {
                             element.parentElement.classList.add('good');
@@ -207,12 +211,39 @@ function initMap() {
                     }
                 };
 
-                // Update each air quality data item
+// Update each air quality data item
                 for (const [key, value] of Object.entries(airQualityValues)) {
                     updateDataItem(key, value);
                 }
+
             })
             .catch(error => console.error('Error fetching air quality data:', error));
+
+        // Fetch weather data from the new endpoint
+        fetch(`/weather-data/weather?lat=${lat}&lon=${lon}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Weather data request failed ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(weatherData => {
+                // Update DOM elements with weather data
+                document.getElementById("country").textContent = weatherData.country;
+                document.getElementById("city").textContent = weatherData.name;
+                document.getElementById("sunrise").textContent = weatherData.sunrise;
+                document.getElementById("sunset").textContent = weatherData.sunset;
+                document.getElementById("weather-main").textContent = weatherData.main;
+                document.getElementById("weather-description").textContent = weatherData.description;
+                document.getElementById("temperature").textContent = (weatherData.temp - 273.15).toFixed(1) + "°C"; // Convert from Kelvin to Celsius
+                document.getElementById("feels-like").textContent = (weatherData.feels_like - 273.15).toFixed(1) + "°C";
+                document.getElementById("pressure").textContent = weatherData.pressure + " hPa";
+                document.getElementById("humidity").textContent = weatherData.humidity + "%";
+                document.getElementById("wind-speed").textContent = weatherData.wind_speed + " m/s";
+                document.getElementById("wind-deg").textContent = weatherData.wind_deg + "°";
+            })
+            .catch(error => console.error('Error fetching weather data:', error));
+
     });
 }
 
