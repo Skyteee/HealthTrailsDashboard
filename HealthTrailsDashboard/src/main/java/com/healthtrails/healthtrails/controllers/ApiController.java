@@ -8,10 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.HttpClientErrorException;
 
 import java.time.Instant;
 import java.time.LocalDateTime;
@@ -134,6 +132,12 @@ public class ApiController {
         LocalDateTime dateTime = LocalDateTime.ofInstant(instant, ZoneId.systemDefault());
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"); // Customize format as needed
         return dateTime.format(formatter);
+    }
+
+    @ExceptionHandler(HttpClientErrorException.class)
+    public String handleHttpClientError(HttpClientErrorException e) {
+        System.out.print("Error Handled!");
+        return "redirect:/404"; // Redirect to an error page or the same page
     }
 
 }

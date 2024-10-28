@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="/css/global.css">
-    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/global/global.css">
+    <link rel="stylesheet" href="/css/homepage/index.css">
+    <link rel="stylesheet" href="/css/homepage/div1.css">
+    <link rel="stylesheet" href="/css/homepage/div2.css">
+    <link rel="stylesheet" href="/css/homepage/div3.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
 <body>
@@ -14,7 +17,7 @@
         <a class="cbutton" href="air-data">Air Data</a>
         <a class="cbutton" href="home">Weather Data</a>
         <a class="cbutton" href="home">Path Data</a>
-        <a class="cbutton" href="home">Flora & Fauna</a>
+        <a class="cbutton" href="flora-fauna">Flora & Fauna</a>
         <a class="cbutton" href="data-sources">Data Sources</a>
     </div>
 </header>
@@ -79,23 +82,35 @@
             </div>
         </div>
         <div class="div3">
-            <div id="weather">
-                <p>Main Weather: <span id="weather-main"></span></p>
-                <p>Description: <span id="weather-description"></span></p>
-                <p>Temperature: <span id="temperature"></span></p>
-                <p>Feels Like: <span id="feels-like"></span></p>
-                <p>Pressure: <span id="pressure"></span></p>
-                <p>Humidity: <span id="humidity"></span></p>
-                <p>Wind Speed: <span id="wind-speed"></span></p>
-                <p>Wind Direction: <span id="wind-deg"></span></p>
+            <div class="data-grid2">
+                <div class="data-item2">
+                    <strong>Main Weather:</strong> <span id="weather-main">Loading...</span>
+                </div>
+                <div class="data-item2">
+                    <strong>Description:</strong> <span id="weather-description">Loading...</span>
+                </div>
+                <div class="data-item2">
+                    <strong>Temperature:</strong> <span id="temperature">Loading...</span>
+                    <strong>Feels Like:</strong> <span id="feels-like">Loading...</span>
+                </div>
+                <div class="data-item2">
+                    <strong>Humidity:</strong> <span id="humidity">Loading...</span>
+                </div>
+                <div class="data-item2">
+                    <strong>Wind Speed:</strong> <span id="wind-speed">Loading...</span>
+                </div>
+                <div class="data-item2">
+                    <strong>Cloud Coverage:</strong> <span id="clouds">Loading...</span>
+                </div>
             </div>
         </div>
     </div>
-
 </div>
 
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 <script src="/js/index.js"></script>
+
+
 
 
 </body>

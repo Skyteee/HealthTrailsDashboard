@@ -24,4 +24,9 @@ public class BaseURLController {
         return "Data-Sources";
     }
 
+    @GetMapping("/flora-fauna")
+    public String floraFauna() {
+        return "flora-fauna";
+    }
+
 }

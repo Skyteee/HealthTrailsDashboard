@@ -1,0 +1,63 @@
+.outlayer .innerlayer .div3 {
+    background-color: #f0f2f5;
+    margin: 10px 10px 10px 5px;
+    height: 50%; /* This defines the height of div3 */
+    width: calc(100% - 20px);
+    border-radius: 10px;
+    display: flex; /* Enable flexbox for div3 */
+    flex-direction: column; /* Arrange children vertically */
+    justify-content: space-between; /* Space items evenly */
+}
+
+.data-grid2 {
+    padding: 10px; /* Padding around the grid */
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to the next line */
+    justify-content: space-between; /* Even spacing between items */
+    height: 100%; /* Occupy full height of div3 */
+}
+
+.data-item2 {
+    background-color: #ffffff; /* White background for each item */
+    border-radius: 10px; /* Rounded edges */
+    height: calc(50% - 10px); /* Each item takes half the height of div3 minus space */
+    padding: 10px; /* Some padding for content */
+    flex: 0 1 calc(33.33% - 10px); /* 3 items per row with some space between */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for depth */
+    margin-bottom: 10px; /* Space below each item */
+    display: flex; /* Enable flexbox for item alignment */
+    flex-direction: column; /* Arrange label and value in a column */
+    align-items: center; /* Center align horizontally */
+    justify-content: center; /* Center align vertically */
+    text-align: center; /* Center text in the box */
+    transition: transform 0.3s ease;
+}
+
+.data-item2:hover {
+    transform: scale(1.02);
+}
+
+.data-item2 strong {
+    font-size: 1.5rem; /* Increased size for labels */
+    font-weight: bold; /* Bold text for labels */
+    margin-bottom: 5px; /* Space between label and value */
+}
+
+.data-item2 span {
+    font-size: 1.3rem; /* Increased size for values */
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .data-item2 {
+        flex: 0 1 calc(50% - 10px); /* 2 items per row on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .data-item2 {
+        flex: 0 1 100%; /* 1 item per row on extra small screens */
+    }
+}

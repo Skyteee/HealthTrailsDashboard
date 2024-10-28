@@ -19,7 +19,13 @@ function initMap() {
     const latCookie = getCookie('lat');
     const lonCookie = getCookie('lon');
     const zoomCookie = getCookie('zoom');
-    const mapCenter = latCookie && lonCookie ? [parseFloat(latCookie), parseFloat(lonCookie)] : [defaultLat, defaultLon];
+
+    // Validate latitude and longitude
+    const lat = isNaN(latCookie) ? defaultLat : parseFloat(latCookie);
+    const lon = isNaN(lonCookie) ? defaultLon : parseFloat(lonCookie);
+
+    // Check if the coordinates are within valid ranges
+    const mapCenter = (lat >= -90 && lat <= 90 && lon >= -180 && lon <= 180) ? [lat, lon] : [defaultLat, defaultLon];
     const mapZoom = zoomCookie ? parseInt(zoomCookie, 10) : defaultZoom;
 
     // Create a map instance with initial coordinates and zoom level
@@ -233,14 +239,14 @@ function initMap() {
                 document.getElementById("city").textContent = weatherData.name;
                 document.getElementById("sunrise").textContent = weatherData.sunrise;
                 document.getElementById("sunset").textContent = weatherData.sunset;
+
                 document.getElementById("weather-main").textContent = weatherData.main;
                 document.getElementById("weather-description").textContent = weatherData.description;
                 document.getElementById("temperature").textContent = (weatherData.temp - 273.15).toFixed(1) + "°C"; // Convert from Kelvin to Celsius
                 document.getElementById("feels-like").textContent = (weatherData.feels_like - 273.15).toFixed(1) + "°C";
-                document.getElementById("pressure").textContent = weatherData.pressure + " hPa";
-                document.getElementById("humidity").textContent = weatherData.humidity + "%";
                 document.getElementById("wind-speed").textContent = weatherData.wind_speed + " m/s";
-                document.getElementById("wind-deg").textContent = weatherData.wind_deg + "°";
+                document.getElementById("humidity").textContent = weatherData.humidity + "%";
+                document.getElementById("clouds").textContent = weatherData.clouds_all + "%"; // Cloud coverage
             })
             .catch(error => console.error('Error fetching weather data:', error));
 

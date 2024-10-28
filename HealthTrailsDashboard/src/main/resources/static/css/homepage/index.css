@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box; /* Apply globally */
+}
+
+.outlayer {
+    display: flex;
+    margin: 20px;
+    background-color: #ffffff;
+    height: 80%;
+    width: calc(100% - 40px);
+    box-sizing: border-box;
+}
+
+.innerlayer {
+    width: 100%;
+    display: block;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    color: #000000;
+}
+
+
+
+
+
+
+
+
+
+
+
