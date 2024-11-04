@@ -12,7 +12,7 @@
     <div>
         <a class="cbutton" href="air-data">Air Data</a>
         <a class="cbutton" href="home">Weather Data</a>
-        <a class="cbutton" href="home">Path Data</a>
+        <a class="cbutton" href="home">Paths</a>
         <a class="cbutton" href="home">Flora & Fauna</a>
     </div>
 </header>
@@ -53,18 +53,14 @@
 
     <!-- External Data Sources Section -->
     <div class="section">
-        <h2>External Data Sources</h2>
-
-        <!-- Example card for an external data source -->
+        <h2>Documentation</h2>
         <div class="card">
-            <h3>External Source Name</h3>
-            <p><strong>Description:</strong> Provides data on air quality across multiple regions.</p>
-            <p><strong>Usage:</strong> Used for air quality overlays on maps.</p>
-            <p><strong>Data Availability:</strong> Free for public access, data updated every hour.</p>
-            <p><strong>Access Link:</strong> <a href="https://example.com" target="_blank">https://example.com</a></p>
+            <ul>
+                <li th:each="file : ${pdfFiles}">
+                    <a th:href="@{'/files/' + ${file}}" th:text="${file}" target="_blank"></a>
+                </li>
+            </ul>
         </div>
-
-        <!-- Additional external data cards can be added here -->
     </div>
 </div>
 
